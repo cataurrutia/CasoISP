@@ -1,0 +1,113 @@
+Desglose del examen:
+Mantenedores:
+    1. Clientes
+    2. Empleados
+    3. Muestras
+    4. Analisis
+
+Sesiones independientes y autenticadas:
+    1. Administrador
+    2. Empleado:
+        - Receptor de muestras
+        - Tecnico laboratorio
+    3. Cliente:
+        - Empresa
+        - Particular
+
+Perfiles con datos personales modificables:
+    1. Para Clientes
+    2. Para Empelados
+
+Reportes:
+    1. Para cada Analisis
+    2. Para cada Tecnico
+    3. Para cada recepcionista
+
+Buscadores:
+    1. Por rut/codigo cliente
+    2. Por codigo de muestra 
+    3. Receptor puede buscar informacion sus muestras recepcionadas
+    4. Tecnico puede buscar informacion sus analisis realizados
+
+
+///////////////////////////////////////////////
+Base de datos:
+    Tablas y sus datos:
+    1. Empresa:
+        - codigoEmpresa
+        - rut
+        - nombre
+        - contraseña
+        - direccion
+    
+    2. Persona_de_contacto:
+        - rut
+        - nombre
+        - email
+        - telefono
+        - codigoEmpresa
+    
+    3. Particular:
+        - codigoParticular
+        - rut
+        - nombre
+        - contraseña
+        - direccion
+        - email
+        - telefono
+
+    4. Categoria:
+        - idCategoria
+        - letraCategoria
+    
+    5. Empleado:
+        - codigoEmpleado
+        - rut
+        - nombre
+        - contraseña
+        - email
+        - id_Categoria
+    
+    6. Muestra:
+        - codigoMuestra
+        - fechaRecepcion
+        - temperatura
+        - cantidad
+        - codigo_cliente (empresa o particular)
+        - codigo_empleado_receptor
+    
+    7. TipoAnalisis:
+        - idTipoAnalisis
+        - NombreTipoAnalisis
+
+    8. Analisis:
+        - codigoAnalisis
+        - fechaAnalisis
+        - codigo_muestra
+        - id_tipoAnalisis
+        - rut_empleado_analisis    
+
+    9. ResultadoAnalisis:
+        - idResultado
+        - presenciaElemento
+        - concentracionElemento
+        - codigo_analisis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
